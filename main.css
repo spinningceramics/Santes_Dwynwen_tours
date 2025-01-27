@@ -1,0 +1,326 @@
+/* General Reset */
+body {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title Section */
+#title {
+    text-align: center;
+    background-color: #f3f3f3; /* Subtle light grey */
+    color: #333; /* Dark grey text for elegance */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #004466; /* Muted teal */
+}
+
+#title h2 {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #666;
+}
+
+/* Image Section */
+#image {
+    position: relative;
+    height: 15rem; /* Adjusted for better proportions */
+    overflow: hidden;
+    background-color: #333;
+}
+
+.image-crop {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem; /* Reduced font size */
+    line-height: 1.5rem;
+    background: rgba(0, 0, 0, 0.6); /* Adds contrast to the text */
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+/* Convincing Text Section */
+#convincing-text {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    gap: 2rem; /* Space between columns */
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #fef5ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px; /* Prevents columns from becoming too small */
+    text-align: left;
+}
+
+#convincing-text h2 {
+    color: #004466; /* Muted teal for consistency */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#convincing-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555; /* Softer black for readability */
+}
+
+/* Parallax Cards Section */
+.title {
+    font-family: "Raleway";
+    font-size: 24px;
+    font-weight: 700;
+    color: #5D4037;
+    text-align: center;
+}
+
+.container {
+    padding: 40px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-wrap {
+    margin: 10px;
+    transform: perspective(800px);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card-wrap:hover .card-info {
+    transform: translateY(0);
+}
+
+.card-wrap:hover .card-info p {
+    opacity: 1;
+}
+
+.card-wrap:hover .card-info,
+.card-wrap:hover .card-info p {
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-wrap:hover .card-info:after {
+    transition: 5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-wrap:hover .card-bg {
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0.8;
+}
+
+.card-wrap:hover .card {
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: rgba(white, 0.2) 0 0 40px 5px,
+                rgba(white, 1) 0 0 0 1px,
+                rgba(black, 0.66) 0 30px 60px 0,
+                inset #333 0 0 0 5px,
+                inset white 0 0 0 6px;
+}
+
+.card {
+    position: relative;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 320px;
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(black, 0.66) 0 30px 60px 0,
+                inset #333 0 0 0 5px,
+                inset rgba(white, 0.5) 0 0 0 6px;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-bg {
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    pointer-events: none;
+}
+
+.card-info {
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    transform: translateY(40%);
+    transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info p {
+    opacity: 0;
+    text-shadow: rgba(black, 1) 0 2px 3px;
+    transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info * {
+    position: relative;
+    z-index: 1;
+}
+
+.card-info:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    background-blend-mode: overlay;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-info h1 {
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: rgba(black, 0.5) 0 10px 10px;
+}
+
+/* Image Gallery Section */
+#image-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-box {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensures the content is vertically centered */
+}
+
+.image-box img {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio while scaling */
+    aspect-ratio: 16 / 9; /* Adjust the ratio as needed, for example 16:9 */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-box p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+#grid-container {
+    display: flex; /* Aligns the two grids side by side */
+    justify-content: space-between;
+    gap: 2rem; /* Adds space between the two grids */
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+/* Styling for the grid sections */
+.grid-half {
+    width: 48%; /* Each grid will take up 48% of the width */
+    display: flex;
+    flex-direction: column; /* This ensures content inside each grid is stacked vertically */
+}
+
+
+
+#left-rectangle {
+    background-color: #e6e6e6;
+    color: rgb(100, 100, 100);
+    padding: 2rem; /* More padding to allow space for content */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Ensures it takes up available space */
+}
+
+#left-rectangle h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem; /* Adds space below the heading */
+}
+
+#book-now {
+    margin-top: 1rem; /* Adds space above the button */
+}
+
+#book-now button {
+    background-color: #ff97fa;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#book-now button:hover {
+    background-color: #b72c4b; /* Darker shade for hover effect */
+}
+
+/* Styling for the second grid */
+#right-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid-item {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

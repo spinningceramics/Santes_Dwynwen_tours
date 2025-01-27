@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teithiau Dwynwen Tours</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Teithiau Dwynwen Tours</h1>
+        <h2>Darganfyddwch hud a chariad Ynys Môn / Discover the magic and love of Anglesey</h2>
+    </div>
+    <div id="image">
+        <img class="image-crop" src="Assets/anglesey.png" alt="Brown rock formation in Anglesey">
+        <div class="overlay-text">
+            <p>Archebwch ddiwrnod â thema Santes Dwynwen heddiw</p>
+            <p>Book a Santes Dwynwen-themed day today</p>
+        </div>
+    </div>
+
+    <div id="convincing-text">
+        <div class="column">
+            <h2>Dathlwch Santes Dwynwen</h2>
+            <p>
+                Dewch i brofi cariad a threftadaeth trwy dreulio Santes Dwynwen ar Ynys Môn! 
+                Gyda golygfeydd arfordirol hudolus a henebion hanesyddol, mae Ynys Môn yn cynnig encil rhamantus perffaith. 
+                Ewch am dro trwy gefn gwlad heddychlon, darganfyddwch ddiwylliant cyfoethog yr ynys, 
+                a chreu atgofion bythgofiadwy gyda’ch anwylyd. Peidiwch â cholli’r cyfle i fwynhau 
+                awyrgylch hudolus diwrnod cariad Cymru.
+            </p>
+        </div>
+        <div class="column">
+            <h2>Blas o Gymru</h2>
+            <p>
+                Gwnewch eich ymweliad yn un bythgofiadwy gyda bwyd Cymreig traddodiadol, siopau anrhegion 
+                swynol, a theithiau tywysedig o eglwysi hanesyddol Santes Dwynwen. Blaswch brydau traddodiadol fel 
+                cawl a chacennau Cymreig, dewch o hyd i anrhegion crefftus unigryw, a dysgwch stori ffasinadol 
+                nawddsant cariad Cymru. Mae Ynys Môn yn llawn profiadau cyfoethog i ddifyrru’ch synhwyrau 
+                ac i ddwysáu’ch cysylltiad â’r diwrnod arbennig hwn.
+            </p>
+        </div>
+    </div>
+
+    <div id="app" class="container">
+        <card data-image="Assets/coastline.png">
+          <h1 slot="header">Coastlines</h1>
+          <p slot="content">Explore beautiful coastlines</p>
+        </card>
+        <card data-image="Assets/village.png">
+          <h1 slot="header">Villages</h1>
+          <p slot="content">Visit curious villages</p>
+        </card>
+        <card data-image="Assets/church.png">
+          <h1 slot="header">Churches</h1>
+          <p slot="content">View historic churches</p>
+        </card>
+        <card data-image="Assets/rocks.png">
+          <h1 slot="header">Cliffside</h1>
+          <p slot="content">Appreciate the wonderful cliffside</p>
+        </card>
+        <card data-image="Assets/watchtower.png">
+            <h1 slot="header">Take Pictures</h1>
+            <p slot="content">Make new memories</p>
+        </card>
+        <card data-image="Assets/castle.png">
+            <h1 slot="header">Explore landmarks</h1>
+            <p slot="content">Observe scenic locations contrasting with weather</p>
+        </card>
+    </div>
+
+    <!-- New Grid Section -->
+    <div id="grid-container">
+        <!-- First Grid (Left side) -->
+        <div class="grid-half" id="left-rectangle">
+            <h1>Ready for a trip to Anglesey?</h1>
+            <div id="book-now">
+                <button onclick="alert('Booking feature is not available yet.')">Book Now / Archebwch Nawr</button>
+            </div>
+        </div>
+
+        <!-- Second Grid (Right side) -->
+        <div class="grid-half" id="right-grid">
+            <div class="grid-item">Sponsored by Shaun the Sheep productions</div>
+            <div class="grid-item">Card components plagiarized from: <a href="https://codepen.io/andymerskin/pen/XNMWvQ">here</a> </div>
+            <div class="grid-item">Images stolen from: <a href="https://unsplash.com/">here</a> </div>
+            <div class="grid-item">Approved by Dave Blunts</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
